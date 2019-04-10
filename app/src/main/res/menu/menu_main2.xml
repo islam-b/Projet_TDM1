@@ -4,8 +4,21 @@
       tools:context="com.example.projettdm1.MainActivity">
 
     <item
+            android:id="@+id/favorite_btn"
+            android:icon="@drawable/favorite_white"
+            android:orderInCategory="100"
+            app:showAsAction="ifRoom" android:layout_height="wrap_content" android:layout_width="wrap_content"
+            android:title="like"/>
+    <item
+            android:id="@+id/search_btn"
+            android:icon="@drawable/search_white"
+            android:orderInCategory="100"
+            app:showAsAction="ifRoom" android:layout_height="wrap_content" android:layout_width="wrap_content"
+            android:title="search"/>
+
+    <item
           android:id="@+id/action_settings"
-          android:title="title1"
+          android:title="Paramètres"
           android:orderInCategory="100"
           app:showAsAction="never" android:layout_height="wrap_content" android:layout_width="wrap_content"/>
 </menu>

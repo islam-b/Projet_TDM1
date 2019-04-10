@@ -10,6 +10,7 @@ import android.widget.TextView
 import com.example.projettdm1.R
 import com.example.projettdm1.models.Categorie
 import com.example.projettdm1.models.News
+import de.hdodenhof.circleimageview.CircleImageView
 
 class NewsListAdapter(val news: ArrayList<News>, listener: NewsListAdapter.OnNewsClickListener): RecyclerView.Adapter<NewsListAdapter.ViewHolder>() {
 
@@ -45,7 +46,7 @@ class NewsListAdapter(val news: ArrayList<News>, listener: NewsListAdapter.OnNew
         }
         val  mListener = listener
         var mNews=news
-        val icon=itemView.findViewById<ImageView>(R.id.news_icon)
+        val icon=itemView.findViewById<CircleImageView>(R.id.news_icon)
         val description= itemView.findViewById<TextView>(R.id.news_description)
         val date= itemView.findViewById<TextView>(R.id.news_date)
         val categorie= itemView.findViewById<TextView>(R.id.news_category)

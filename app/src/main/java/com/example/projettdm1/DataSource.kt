@@ -10,13 +10,13 @@ object DataSource {
     var filterContreints = ArrayList<Categorie>()
 
     init {
-        val category1 =  Categorie(R.mipmap.ic_launcher,"Me","Hello")
-        val category2 =  Categorie(R.mipmap.ic_launcher,"Me2","Hello")
-        val category3 =  Categorie(R.mipmap.ic_launcher,"Me3","Hello")
+        val category1 =  Categorie(R.mipmap.alger,"Me","Hello")
+        val category2 =  Categorie(R.mipmap.alger,"Me2","Hello")
+        val category3 =  Categorie(R.mipmap.alger,"Me3","Hello")
 
-        newsList.add(News(R.mipmap.ic_launcher,"01/04/2019","Hello1 ", "detail11", category1))
-        newsList.add(News(R.mipmap.ic_launcher,"01/04/2019","Hello2 ","detail22", category2))
-        newsList.add(News(R.mipmap.ic_launcher,"01/04/2019","Hello3 ","detail33", category3))
+        newsList.add(News(R.mipmap.alger,"01/04/2019","Hello1 ", "detail11", category1))
+        newsList.add(News(R.mipmap.alger,"01/04/2019","Hello2 ","detail22", category2))
+        newsList.add(News(R.mipmap.alger,"01/04/2019","Hello3 ","detail33", category3))
 
         categoriesList.add(category1)
         categoriesList.add(category2)
