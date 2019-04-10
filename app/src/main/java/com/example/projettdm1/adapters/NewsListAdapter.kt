@@ -1,0 +1,56 @@
+
+package com.example.projettdm1.adapters
+import android.util.Log
+import androidx.recyclerview.widget.RecyclerView
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
+import com.example.projettdm1.R
+import com.example.projettdm1.models.Categorie
+import com.example.projettdm1.models.News
+
+class NewsListAdapter(val news: ArrayList<News>, listener: NewsListAdapter.OnNewsClickListener): RecyclerView.Adapter<NewsListAdapter.ViewHolder>() {
+
+
+    private val mListener=listener
+    override fun onCreateViewHolder(p0: ViewGroup, p1: Int): ViewHolder {
+        val vi = LayoutInflater.from(p0.context).inflate(R.layout.news_item, p0, false)
+        Log.d("TXT",news[p1].description)
+        return ViewHolder(vi,news[p1],mListener)
+    }
+
+    override fun getItemCount(): Int {
+        return news.size
+    }
+
+    override fun onBindViewHolder(p0: ViewHolder, p1: Int) {
+        val new = news[p1]
+        p0.icon.setImageResource(new.iconRes)
+        p0.description.text = new.description
+        p0.date.text = new.date
+        p0.categorie.text = new.categorie.Title
+        p0.mNews = new
+
+    }
+
+
+    inner class ViewHolder(itemView: View,news:News ,listener: NewsListAdapter.OnNewsClickListener): RecyclerView.ViewHolder(itemView), View.OnClickListener {
+        override fun onClick(v: View?) {
+            mListener.OnNewsClick(mNews)
+        }
+        init {
+            itemView.setOnClickListener(this)
+        }
+        val  mListener = listener
+        var mNews=news
+        val icon=itemView.findViewById<ImageView>(R.id.news_icon)
+        val description= itemView.findViewById<TextView>(R.id.news_description)
+        val date= itemView.findViewById<TextView>(R.id.news_date)
+        val categorie= itemView.findViewById<TextView>(R.id.news_category)
+    }
+     interface OnNewsClickListener{
+        fun OnNewsClick(news: News)
+    }
+}
