@@ -2,6 +2,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
              xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
+             android:background="?attr/backgroundColor"
              android:layout_height="match_parent"
              tools:context=".fragments.FilterNewsFragment"
 
@@ -16,6 +17,7 @@
 
             <com.google.android.material.card.MaterialCardView android:layout_width="match_parent"
                                                                android:layout_height="wrap_content"
+                                                               android:backgroundTint="?attr/cardBackground"
                                                                app:layout_constraintStart_toStartOf="parent"
                                                                android:layout_marginStart="8dp"
                                                                app:layout_constraintTop_toTopOf="parent"
@@ -36,7 +38,7 @@
                             android:layout_height="wrap_content"
                             app:layout_constraintEnd_toStartOf="@+id/add_chip"
                             app:layout_constraintHorizontal_bias="0.5" android:layout_marginStart="10dp"
-                            android:layout_marginTop="10dp" android:layout_marginBottom="10dp"/>
+                            android:layout_marginTop="10dp" android:layout_marginBottom="10dp"/>>
                     <ImageButton android:layout_width="wrap_content" android:layout_height="wrap_content"
                                  android:src="@drawable/ic_add_black_24dp"
                                  android:background="@android:color/transparent"
@@ -44,7 +46,8 @@
                                  android:id="@+id/add_chip"
                                  app:layout_constraintStart_toEndOf="@+id/chips_container"
                                  app:layout_constraintHorizontal_bias="0.5"
-                    />
+                                 android:layout_marginTop="10dp" android:layout_marginEnd="10dp"
+                                 android:paddingBottom="10dp" android:clickable="true"/>
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>
 

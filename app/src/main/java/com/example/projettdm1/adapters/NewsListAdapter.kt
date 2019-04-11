@@ -5,8 +5,10 @@ import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
+import com.example.projettdm1.DataSource
 import com.example.projettdm1.R
 import com.example.projettdm1.models.Categorie
 import com.example.projettdm1.models.News
@@ -32,6 +34,20 @@ class NewsListAdapter(val news: ArrayList<News>, listener: NewsListAdapter.OnNew
         p0.description.text = new.description
         p0.date.text = new.date
         p0.categorie.text = new.categorie.Title
+
+        if (DataSource.isFavorite(new)) p0.add_to_fav_button.setImageResource(R.drawable.favorite)
+        else p0.add_to_fav_button.setImageResource(R.drawable.favorite_grey)
+
+        p0.add_to_fav_button.setOnClickListener {
+            if (DataSource.isFavorite(new)) {
+                DataSource.removeFromFavorites(new)
+                p0.add_to_fav_button.setImageResource(R.drawable.favorite_grey)
+            } else {
+                DataSource.addToFavorites(new)
+                p0.add_to_fav_button.setImageResource(R.drawable.favorite)
+            }
+
+        }
         p0.mNews = new
 
     }
@@ -46,10 +62,11 @@ class NewsListAdapter(val news: ArrayList<News>, listener: NewsListAdapter.OnNew
         }
         val  mListener = listener
         var mNews=news
-        val icon=itemView.findViewById<CircleImageView>(R.id.news_icon)
+        val icon=itemView.findViewById<ImageView>(R.id.news_icon)
         val description= itemView.findViewById<TextView>(R.id.news_description)
         val date= itemView.findViewById<TextView>(R.id.news_date)
         val categorie= itemView.findViewById<TextView>(R.id.news_category)
+        val add_to_fav_button=itemView.findViewById<ImageButton>(R.id.add_to_fav_btn)
     }
      interface OnNewsClickListener{
         fun OnNewsClick(news: News)

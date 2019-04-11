@@ -5,7 +5,7 @@
         android:layout_width="match_parent"
         style="@style/AppCard"
         android:layout_height="wrap_content"
-
+        android:backgroundTint="?attr/cardBackground"
         app:cardCornerRadius="4dp"
         app:layout_constraintTop_toTopOf="parent"
 
@@ -24,16 +24,20 @@
         <ImageView
                 android:layout_width="match_parent"
                 android:src="@mipmap/ic_launcher"
-                android:id="@+id/category_icon" android:layout_height="106dp" android:scaleType="fitXY"/>
+                android:id="@+id/category_icon" android:layout_height="106dp" android:scaleType="fitXY"
+                android:layout_marginBottom="10dp"/>
         <TextView
                 android:text="TextView"
                 android:textSize="20dp"
+                android:textColor="?attr/textColor"
                 android:id="@+id/category_title"
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:paddingStart="16dp"/>
         <TextView
                 android:text="TextView"
                 android:textSize="14dp"
+                android:textColor="?attr/textColor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/category_decription"
                 android:paddingStart="16dp"/>

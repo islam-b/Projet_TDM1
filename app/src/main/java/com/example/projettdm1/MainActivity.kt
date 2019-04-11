@@ -1,5 +1,6 @@
 package com.example.projettdm1
 
+import android.content.ClipData
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
@@ -27,7 +28,7 @@ import com.google.android.material.chip.ChipGroup
 import kotlinx.android.synthetic.main.activity_main2.*
 
 class MainActivity : AppCompatActivity(), NewsListAdapter.OnNewsClickListener,
-    CategoriesFragment.OnCategoryInteractionListener , LecturesFragment.OnFragmentInteractionListener,
+    CategoriesListAdapter.OnCategoryClickListener ,
     FilterNewsFragment.OnChipClickListener , ChipFragment.OnCloseListener,NewsFilteredContainer.OnFragmentInteractionListener {
 
     override fun OnNewsClick(news: News) {
@@ -35,7 +36,7 @@ class MainActivity : AppCompatActivity(), NewsListAdapter.OnNewsClickListener,
                startActivity(intent)
     }
 
-    override fun onCategoryClick(position: Int) {
+    override fun OnCategoryClick(position: Int) {
         DataSource.clearConstreints()
         Log.d("POSITION",position.toString())
         DataSource.addFilterContreint(position)
@@ -79,6 +80,7 @@ class MainActivity : AppCompatActivity(), NewsListAdapter.OnNewsClickListener,
         setContentView(R.layout.activity_main2)
 
         setSupportActionBar(toolbar)
+
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
         mSectionsPagerAdapter = SectionsPagerAdapter(supportFragmentManager)
@@ -89,10 +91,7 @@ class MainActivity : AppCompatActivity(), NewsListAdapter.OnNewsClickListener,
         container.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tabs))
         tabs.addOnTabSelectedListener(TabLayout.ViewPagerOnTabSelectedListener(container))
 
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
+
 
     }
 
@@ -109,7 +108,15 @@ class MainActivity : AppCompatActivity(), NewsListAdapter.OnNewsClickListener,
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         val id = item.itemId
-        return super.onOptionsItemSelected(item)
+        when (id) {
+            R.id.favorite_btn -> {
+                val intent = Main4Activity.newIntent(this)
+                startActivity(intent)
+            }
+
+                else -> return false
+        }
+        return true
     }
 
 
@@ -140,11 +147,6 @@ class MainActivity : AppCompatActivity(), NewsListAdapter.OnNewsClickListener,
         }
     }
 
-    companion object {
-        fun newIntent(context: Context): Intent {
-            val intent= Intent(context, MainActivity::class.java)
-            return intent
-        }
-    }
+
 
 }

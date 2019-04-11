@@ -31,16 +31,14 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  *
  */
-class CategoriesFragment : Fragment(), CategoriesListAdapter.OnCategoryClickListener {
+class CategoriesFragment : Fragment() {
 
-    override fun OnCategoryClick(position: Int) {
-        listener?.onCategoryClick(position)
-    }
+
 
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-    private var listener: OnCategoryInteractionListener? = null
+    private var listener: CategoriesListAdapter.OnCategoryClickListener? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -67,9 +65,11 @@ class CategoriesFragment : Fragment(), CategoriesListAdapter.OnCategoryClickList
         recylclerview.layoutManager = GridLayoutManager(context, 2)
 
 
+        listener?.let {
+            val adapter = CategoriesListAdapter(DataSource.getCategories(),it)
+            recylclerview.adapter = adapter
+        }
 
-        val adapter = CategoriesListAdapter(DataSource.getCategories(),this)
-        recylclerview.adapter = adapter
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -79,10 +79,10 @@ class CategoriesFragment : Fragment(), CategoriesListAdapter.OnCategoryClickList
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        if (context is OnCategoryInteractionListener) {
+        if (context is CategoriesListAdapter.OnCategoryClickListener) {
             listener = context
         } else {
-            throw RuntimeException(context.toString() + " must implement OnFragmentInteractionListener")
+            throw RuntimeException(context.toString() + " CategoriesListAdapter.OnCategoryClickListener")
         }
     }
 
@@ -102,10 +102,7 @@ class CategoriesFragment : Fragment(), CategoriesListAdapter.OnCategoryClickList
      * (http://developer.android.com/training/basics/fragments/communicating.html)
      * for more information.
      */
-    interface OnCategoryInteractionListener {
-        // TODO: Update argument type and name
-        fun onCategoryClick(position: Int)
-    }
+
 
     companion object {
         /**

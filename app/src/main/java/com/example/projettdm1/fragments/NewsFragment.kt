@@ -59,6 +59,16 @@ class NewsFragment : Fragment() {
         return view
     }
 
+    override fun onResume() {
+        var recylclerview = activity?.findViewById<RecyclerView>(R.id.news_list)
+        val l=listener
+        l?.let {
+            val adapter = NewsListAdapter(DataSource.getNews(),l)
+            recylclerview?.adapter = adapter
+        }
+        super.onResume()
+    }
+
     fun initNews(view: View) {
         var recylclerview = view.findViewById<RecyclerView>(R.id.news_list)
         val spacingInPixels = resources.getDimensionPixelSize(R.dimen.spacing)

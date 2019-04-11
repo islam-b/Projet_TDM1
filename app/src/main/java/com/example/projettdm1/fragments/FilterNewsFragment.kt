@@ -93,7 +93,11 @@ class FilterNewsFragment : Fragment(), PopupMenu.OnMenuItemClickListener {
 
         val firstCategory = DataSource.filterContreints[0]
         listener?.onChipClick(firstCategory)
+    }
 
+    override fun onResume() {
+        updateNewsList()
+        super.onResume()
     }
 
     fun updateNewsList() {
