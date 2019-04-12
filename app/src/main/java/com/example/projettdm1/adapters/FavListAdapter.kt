@@ -60,7 +60,7 @@ class FavListAdapter(val favorites: ArrayList<News>, listener: FavListAdapter.On
         }
         val  mListener = listener
         var mNews=news
-        val icon=itemView.findViewById<ImageView>(R.id.fav_icon)
+        val icon=itemView.findViewById<CircleImageView>(R.id.fav_icon)
         val description= itemView.findViewById<TextView>(R.id.fav_title)
         val fav_dislike = itemView.findViewById<ImageButton>(R.id.fav_dislike)
 

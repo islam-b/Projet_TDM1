@@ -15,12 +15,14 @@ object DataSource {
         val category2 =  Categorie(R.drawable.a,"Me2","Hello")
         val category3 =  Categorie(R.drawable.a,"Me3","Hello")
 
-        val news1=News(R.mipmap.alger,"01/04/2019","Hello1 ", "detail11", category1)
+        val news1=News(R.drawable.a,"01/04/2019","Hello1 ", "detail11", category1)
         val news2=News(R.drawable.a,"01/04/2019","Hello2 ","detail22", category2)
-        val news3=News(R.mipmap.alger,"01/04/2019","Hello3 ","detail33", category3)
+        val news3=News(R.drawable.a,"01/04/2019","Hello3 ","detail33", category3)
+        val news4=News(R.drawable.a,"01/04/2019","Hello4 ","detail34", category1)
         newsList.add(news1)
         newsList.add(news2)
         newsList.add(news3)
+        newsList.add(news4)
 
         categoriesList.add(category1)
         categoriesList.add(category2)
@@ -73,5 +75,8 @@ object DataSource {
 
     fun isFavorite(news: News): Boolean {
         return favoritesList.contains(news)
+    }
+    fun isConstreint(index:Int):Boolean {
+        return filterContreints.contains(categoriesList[index])
     }
 }

@@ -7,6 +7,7 @@
         <attr name="accentColor1" format="color"/>
         <attr name="accentColor2" format="color"/>
         <attr name="tintColor" format="color"/>
+        <attr name="lightMode" format="reference"/>
 
     </declare-styleable>
 </resources>

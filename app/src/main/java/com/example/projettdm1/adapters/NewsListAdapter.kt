@@ -62,7 +62,7 @@ class NewsListAdapter(val news: ArrayList<News>, listener: NewsListAdapter.OnNew
         }
         val  mListener = listener
         var mNews=news
-        val icon=itemView.findViewById<ImageView>(R.id.news_icon)
+        val icon=itemView.findViewById<CircleImageView>(R.id.news_icon)
         val description= itemView.findViewById<TextView>(R.id.news_description)
         val date= itemView.findViewById<TextView>(R.id.news_date)
         val categorie= itemView.findViewById<TextView>(R.id.news_category)

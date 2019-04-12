@@ -16,6 +16,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.viewpager.widget.ViewPager
 import com.example.projettdm1.adapters.CategoriesListAdapter
 import com.example.projettdm1.adapters.NewsListAdapter
@@ -77,9 +78,16 @@ class MainActivity : AppCompatActivity(), NewsListAdapter.OnNewsClickListener,
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+
+        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
+            setTheme(R.style.darkTheme)
+        } else setTheme(R.style.AppTheme)
+
         setContentView(R.layout.activity_main2)
 
         setSupportActionBar(toolbar)
+
 
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
@@ -113,10 +121,25 @@ class MainActivity : AppCompatActivity(), NewsListAdapter.OnNewsClickListener,
                 val intent = Main4Activity.newIntent(this)
                 startActivity(intent)
             }
+            R.id.mode_btn -> {
+                if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                    restartApp()
+                } else {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                    restartApp()
+                }
+            }
 
                 else -> return false
         }
         return true
+    }
+
+    fun restartApp() {
+        val i = Intent(this,MainActivity::class.java)
+        startActivity(i)
+        finish()
     }
 
 

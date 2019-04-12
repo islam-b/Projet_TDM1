@@ -6,12 +6,12 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <!--<item name="materialCardViewStyle">@style/AppCard</item>-->
+        <item name="materialCardViewStyle">@style/AppCard</item>
         <item name="backgroundColor">@color/bgColorLight</item>
         <item name="cardBackground">@color/cardBgLight</item>
         <item name="textColor">@color/txtColorLight</item>
         <item name="tintColor">@color/tintColor</item>
-
+        <item name="lightMode">@drawable/night_mode</item>
     </style>
 
     <style name="darkTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
@@ -24,6 +24,7 @@
         <item name="cardBackground">#272528</item>
         <item name="textColor">#fefefe</item>
         <item name="tintColor">@color/tintColor</item>
+        <item name="lightMode">@drawable/light_mode</item>
 
     </style>
 
@@ -38,6 +39,7 @@
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light"/>
     <style name="AppCard" parent="Widget.MaterialComponents.CardView">
         <item name="cardElevation">4dp</item>
+
     </style>
 
 </resources>

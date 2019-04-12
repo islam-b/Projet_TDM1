@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat
 import com.example.projettdm1.R.color.*
 import com.example.projettdm1.models.News
@@ -21,6 +22,9 @@ class Main3Activity : AppCompatActivity() {
     private var currentNew:News?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
+            setTheme(R.style.darkTheme)
+        } else setTheme(R.style.AppTheme)
         setContentView(R.layout.activity_main3)
 
         val bundle = intent.extras

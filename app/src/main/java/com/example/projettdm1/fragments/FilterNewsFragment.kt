@@ -70,15 +70,25 @@ class FilterNewsFragment : Fragment(), PopupMenu.OnMenuItemClickListener {
     }
 
     fun initMenu(view: View) {
-        var popupMenu = PopupMenu(context,view.findViewById(R.id.add_chip))
-        for (i in 0 until DataSource.categoriesList.size) {
-            popupMenu.menu.add(Menu.NONE,i,i,DataSource.categoriesList[i].Title)
-        }
-        popupMenu.setOnMenuItemClickListener(this)
-        popupMenu.inflate(R.menu.category_menu)
+
 
         view.findViewById<ImageButton>(R.id.add_chip).setOnClickListener {
+            var popupMenu = PopupMenu(context,view.findViewById(R.id.add_chip))
+            var empty = true
+            for (i in 0 until DataSource.categoriesList.size) {
+                if (!DataSource.isConstreint(i)) {
+                    popupMenu.menu.add(Menu.NONE,i,i,DataSource.categoriesList[i].Title)
+                    empty=false
+                }
+            }
+            if (!empty) {
+                popupMenu.setOnMenuItemClickListener(this)
+            } else {
+                popupMenu.menu.add(Menu.NONE,0,0,"Toutes les catègories sont choisies.")
+            }
+            popupMenu.inflate(R.menu.category_menu)
             popupMenu.show()
+
         }
     }
     override fun onMenuItemClick(item: MenuItem?): Boolean {

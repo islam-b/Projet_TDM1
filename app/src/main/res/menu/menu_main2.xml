@@ -10,8 +10,8 @@
             app:showAsAction="ifRoom" android:layout_height="wrap_content" android:layout_width="wrap_content"
             android:title="like"/>
     <item
-            android:id="@+id/search_btn"
-            android:icon="@drawable/search_white"
+            android:id="@+id/mode_btn"
+            android:icon="?attr/lightMode"
             android:orderInCategory="100"
             app:showAsAction="ifRoom" android:layout_height="wrap_content" android:layout_width="wrap_content"
             android:title="search"/>
@@ -21,4 +21,5 @@
           android:title="Paramètres"
           android:orderInCategory="100"
           app:showAsAction="never" android:layout_height="wrap_content" android:layout_width="wrap_content"/>
+
 </menu>

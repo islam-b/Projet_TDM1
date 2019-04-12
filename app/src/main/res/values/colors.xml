@@ -4,7 +4,7 @@
     <color name="colorPrimaryDark">#1875D5</color>
     <color name="colorAccent">#06A8FE</color>
     <color name="colorAccent2">#A4A4A4</color>
-    <color name="bgColorLight">#f9f9f9</color>
+    <color name="bgColorLight">#eeeeee</color>
     <color name="cardBgLight">#fefefe</color>
     <color name="txtColorLight"> #1A181B </color>
     <color name="tintColor"> #06A8FE </color>

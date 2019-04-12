@@ -28,54 +28,69 @@
                 <LinearLayout
                         android:orientation="vertical"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" android:paddingTop="16dp"
-                        android:paddingEnd="24dp" android:paddingBottom="24dp"
-                        android:paddingStart="24dp">
-                    <com.google.android.material.card.MaterialCardView android:layout_width="match_parent"
-                                                                       android:backgroundTint="?attr/cardBackground"
-                                                                       android:layout_height="match_parent">
-                    <LinearLayout
-                            android:orientation="vertical"
+                        android:layout_height="wrap_content"
+                >
+                    <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent" android:padding="16dp">
-                        <TextView
-                                android:text="TextView"
-                                android:textSize="20sp"
+                            android:layout_height="match_parent">
 
-                                android:textColor="?attr/textColor"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content" android:id="@+id/title_info"/>
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
 
-                            <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:src="@drawable/calendar_icon" android:id="@+id/imageView4"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintHorizontal_bias="0.5"
-                                    app:layout_constraintEnd_toStartOf="@+id/date_info"
-                                    app:layout_constraintTop_toTopOf="@+id/date_info"
-                                    app:layout_constraintBottom_toBottomOf="@+id/date_info"/>
-                            <TextView
-                                    android:text="TextView"
-                                    android:layout_width="wrap_content"
-                                    android:textSize="14sp"
-                                    android:textColor="?attr/textColor"
-                                    android:layout_height="wrap_content" android:id="@+id/date_info"
-                                    app:layout_constraintStart_toEndOf="@+id/imageView4"
-                                    app:layout_constraintTop_toTopOf="parent"
-                                    app:layout_constraintBottom_toBottomOf="parent"/>
-                        </androidx.constraintlayout.widget.ConstraintLayout>
-                        <TextView
-                                android:text="TextView"
-                                android:textSize="16sp"
-                                android:textColor="?attr/textColor"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content" android:id="@+id/detail_info"/>
-                    </LinearLayout>
-                    </com.google.android.material.card.MaterialCardView>
+                        <com.google.android.material.card.MaterialCardView android:layout_width="match_parent"
+                                                                           android:backgroundTint="?attr/cardBackground"
+                                                                           app:cardElevation="4dp"
+                                                                           android:layout_height="match_parent"
+                                                                           app:layout_constraintTop_toTopOf="parent"
+                                                                           app:layout_constraintEnd_toEndOf="parent"
+                                                                           android:layout_marginEnd="16dp"
+                                                                           app:layout_constraintBottom_toBottomOf="parent"
+                                                                           android:layout_marginTop="16dp"
+                                                                           android:layout_marginBottom="16dp"
+                                                                           app:layout_constraintStart_toStartOf="parent"
+                                                                           android:layout_marginStart="16dp">
+                            <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent" android:padding="16dp">
+                                <TextView
+                                        android:text="TextView"
+                                        android:textSize="20sp"
+
+                                        android:textColor="?attr/textColor"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content" android:id="@+id/title_info"
+                                        android:layout_marginBottom="8dp"/>
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content" android:layout_marginBottom="8dp">
+
+                                    <ImageView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:src="@drawable/calendar_icon" android:id="@+id/imageView4"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintHorizontal_bias="0.5"
+                                            app:layout_constraintEnd_toStartOf="@+id/date_info"
+                                            app:layout_constraintTop_toTopOf="@+id/date_info"
+                                            app:layout_constraintBottom_toBottomOf="@+id/date_info"/>
+                                    <TextView
+                                            android:text="TextView"
+                                            android:layout_width="wrap_content"
+                                            android:textSize="14sp"
+                                            android:textColor="?attr/textColor"
+                                            android:layout_height="wrap_content" android:id="@+id/date_info"
+                                            app:layout_constraintStart_toEndOf="@+id/imageView4"
+                                            app:layout_constraintTop_toTopOf="parent"
+                                            app:layout_constraintBottom_toBottomOf="parent"/>
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+                                <TextView
+                                        android:text="TextView"
+                                        android:textSize="16sp"
+                                        android:textColor="?attr/textColor"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content" android:id="@+id/detail_info"/>
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
                 </LinearLayout>
             </LinearLayout>
         </ScrollView>

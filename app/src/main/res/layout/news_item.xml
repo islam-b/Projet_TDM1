@@ -4,6 +4,7 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
+        style="@style/AppCard"
         android:layout_width="match_parent"
         android:backgroundTint="?attr/cardBackground"
         android:layout_height="wrap_content"
@@ -14,6 +15,7 @@
 >
     <LinearLayout
             android:orientation="vertical"
+            android:background="?attr/selectableItemBackgroundBorderless"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
@@ -23,7 +25,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" android:padding="10dp">
 
-            <ImageView
+            <de.hdodenhof.circleimageview.CircleImageView
                     android:layout_width="72dp"
                     android:src="@mipmap/alger"
                     android:layout_height="72dp"
