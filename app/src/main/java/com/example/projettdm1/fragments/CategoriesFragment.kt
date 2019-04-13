@@ -1,6 +1,7 @@
 package com.example.projettdm1.fragments
 
 import android.content.Context
+import android.content.res.Configuration
 import android.net.Uri
 import android.os.Bundle
 import android.provider.ContactsContract
@@ -61,9 +62,19 @@ class CategoriesFragment : Fragment() {
     fun initCategories(view: View) {
         var recylclerview = view.findViewById<RecyclerView>(R.id.categories_grid)
         val spacingInPixels = resources.getDimensionPixelSize(R.dimen.spacing)
-        recylclerview.addItemDecoration(GridItemDecoration(spacingInPixels))
-        recylclerview.layoutManager = GridLayoutManager(context, 2)
+        context?.let {
+            recylclerview.addItemDecoration(GridItemDecoration(spacingInPixels, it))
 
+            if (it.resources.configuration.screenLayout.and(Configuration.SCREENLAYOUT_SIZE_MASK) == Configuration.SCREENLAYOUT_SIZE_XLARGE) {
+                if (it.resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                    recylclerview.layoutManager = GridLayoutManager(it, 5)
+                } else recylclerview.layoutManager = GridLayoutManager(it, 4)
+            } else {
+                if (it.resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                    recylclerview.layoutManager = GridLayoutManager(it, 4)
+                } else recylclerview.layoutManager = GridLayoutManager(it, 2)
+            }
+        }
 
         listener?.let {
             val adapter = CategoriesListAdapter(DataSource.getCategories(),it)

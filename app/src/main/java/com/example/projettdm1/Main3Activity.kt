@@ -49,8 +49,8 @@ class Main3Activity : AppCompatActivity() {
     }
 
     fun initView() {
-        findViewById<TextView>(R.id.title_info).text =currentNew?.description
-        findViewById<TextView>(R.id.detail_info).text =currentNew?.detail
+        findViewById<TextView>(R.id.title_info).text =currentNew?.title
+        findViewById<TextView>(R.id.detail_info).text =currentNew?.description
         findViewById<TextView>(R.id.date_info).text =currentNew?.date
         currentNew?.iconRes?.let {
             findViewById<ImageView>(R.id.image_info).setImageResource(it)
@@ -85,8 +85,8 @@ class Main3Activity : AppCompatActivity() {
 
         val intent = Intent(Intent.ACTION_SEND)
         intent.type = "text/plain"
-        intent.putExtra(Intent.EXTRA_SUBJECT, content.description)
-        intent.putExtra(Intent.EXTRA_TEXT, content.detail)
+        intent.putExtra(Intent.EXTRA_SUBJECT, content.title)
+        intent.putExtra(Intent.EXTRA_TEXT, content.description)
         startActivity(Intent.createChooser(intent,"Partager via"))
 
     }

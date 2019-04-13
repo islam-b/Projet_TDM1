@@ -1,8 +1,10 @@
 package com.example.projettdm1.fragments
 
 import android.content.Context
+import android.content.res.Configuration
 import android.net.Uri
 import android.os.Bundle
+import android.util.DisplayMetrics
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -13,10 +15,7 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import com.example.projettdm1.DataSource
 import com.example.projettdm1.R
-import com.example.projettdm1.adapters.CategoriesListAdapter
-import com.example.projettdm1.adapters.GridItemDecoration
-import com.example.projettdm1.adapters.LinearItemDecoration
-import com.example.projettdm1.adapters.NewsListAdapter
+import com.example.projettdm1.adapters.*
 import com.example.projettdm1.models.Categorie
 import com.example.projettdm1.models.News
 
@@ -72,14 +71,28 @@ class NewsFragment : Fragment() {
     fun initNews(view: View) {
         var recylclerview = view.findViewById<RecyclerView>(R.id.news_list)
         val spacingInPixels = resources.getDimensionPixelSize(R.dimen.spacing)
-        recylclerview.addItemDecoration(LinearItemDecoration(spacingInPixels))
-        recylclerview.layoutManager =
-            LinearLayoutManager(context, RecyclerView.VERTICAL, false)
+        context?.let {
 
-        val l=listener
-        l?.let {
-            val adapter = NewsListAdapter(DataSource.getNews(),l)
-            recylclerview.adapter = adapter
+
+            if (it.resources.configuration.screenLayout.and(Configuration.SCREENLAYOUT_SIZE_MASK) == Configuration.SCREENLAYOUT_SIZE_XLARGE) {
+
+                recylclerview.addItemDecoration(NewsItemLargeScreenDecoration(spacingInPixels, it))
+                if (it.resources.configuration?.orientation== Configuration.ORIENTATION_LANDSCAPE) {
+                    recylclerview.layoutManager = GridLayoutManager(context, 3)
+                } else recylclerview.layoutManager = GridLayoutManager(context, 2)
+
+
+            } else {
+                recylclerview.addItemDecoration(LinearItemDecoration(spacingInPixels))
+                recylclerview.layoutManager =
+                    LinearLayoutManager(context, RecyclerView.VERTICAL, false)
+            }
+
+            val l = listener
+            l?.let {
+                val adapter = NewsListAdapter(DataSource.getNews(), l)
+                recylclerview.adapter = adapter
+            }
         }
 
     }

@@ -2,6 +2,7 @@ package com.example.projettdm1
 
 import android.content.Context
 import android.content.Intent
+import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -9,15 +10,17 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.widget.Toolbar
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projettdm1.adapters.FavListAdapter
 import com.example.projettdm1.adapters.LinearItemDecoration
+import com.example.projettdm1.adapters.NewsItemLargeScreenDecoration
 import com.example.projettdm1.adapters.NewsListAdapter
 import com.example.projettdm1.models.News
 
 
-class Main4Activity : AppCompatActivity(), FavListAdapter.OnNewsClickListener {
+class Main4Activity : AppCompatActivity(), FavListAdapter.OnNewsClickListener, NewsListAdapter.OnNewsClickListener {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -51,11 +54,25 @@ class Main4Activity : AppCompatActivity(), FavListAdapter.OnNewsClickListener {
 
     fun initFav() {
         var recylclerview = findViewById<RecyclerView>(R.id.fav_list_container)
+        val spacingInPixels = resources.getDimensionPixelSize(R.dimen.spacing)
+        if (resources.configuration.screenLayout.and(Configuration.SCREENLAYOUT_SIZE_MASK) == Configuration.SCREENLAYOUT_SIZE_XLARGE) {
 
-        recylclerview.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
+            recylclerview.addItemDecoration(NewsItemLargeScreenDecoration(spacingInPixels, this))
+            if (resources.configuration?.orientation== Configuration.ORIENTATION_LANDSCAPE) {
+                recylclerview.layoutManager = GridLayoutManager(this, 3)
+            } else recylclerview.layoutManager = GridLayoutManager(this, 2)
 
-        val adapter = FavListAdapter(DataSource.getFavorites(),this)
-        recylclerview.adapter = adapter
+
+            val adapter = NewsListAdapter(DataSource.getFavorites(),this)
+            recylclerview.adapter = adapter
+        } else {
+            recylclerview.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
+            val adapter = FavListAdapter(DataSource.getFavorites(),this)
+            recylclerview.adapter = adapter
+
+        }
+
+
 
     }
 
@@ -65,6 +82,7 @@ class Main4Activity : AppCompatActivity(), FavListAdapter.OnNewsClickListener {
         val intent = Main3Activity.newIntent(this,news)
         startActivity(intent)
     }
+
 
 
     companion object {

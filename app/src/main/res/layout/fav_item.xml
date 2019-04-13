@@ -13,26 +13,27 @@
 
         <de.hdodenhof.circleimageview.CircleImageView
                 android:layout_width="72dp"
-                android:layout_height="72dp" android:src="@drawable/alg" android:id="@+id/fav_icon"
+                android:layout_height="72dp" android:src="@drawable/a" android:id="@+id/fav_icon"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent" android:scaleType="centerCrop"
                 app:layout_constraintEnd_toStartOf="@+id/fav_title"
         />
         <TextView
-                android:text="TextView"
+                android:text="test with a long teeext, back to line"
                 android:textSize="18sp"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:textColor="?attr/textColor"
                 android:layout_height="wrap_content" android:id="@+id/fav_title"
                 app:layout_constraintStart_toEndOf="@+id/fav_icon"
                 app:layout_constraintTop_toTopOf="@+id/fav_icon"
-                app:layout_constraintBottom_toBottomOf="@+id/fav_icon" android:layout_marginStart="20dp"/>
+                app:layout_constraintBottom_toBottomOf="@+id/fav_icon" android:layout_marginStart="20dp"
+                app:layout_constraintEnd_toStartOf="@+id/fav_dislike" android:layout_marginEnd="20dp"/>
         <ImageButton
-                android:layout_width="wrap_content"
+                android:layout_width="28dp"
                 android:background="@android:color/transparent"
                 android:clickable="true"
-                android:layout_height="wrap_content" app:srcCompat="@drawable/favorite" android:id="@+id/fav_dislike"
+                android:layout_height="28dp" app:srcCompat="@drawable/favorite" android:id="@+id/fav_dislike"
                 app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="@+id/fav_title"
                 app:layout_constraintBottom_toBottomOf="@+id/fav_title" android:layout_marginEnd="10dp"/>
     </androidx.constraintlayout.widget.ConstraintLayout>

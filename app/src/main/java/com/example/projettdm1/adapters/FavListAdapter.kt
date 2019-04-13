@@ -31,7 +31,7 @@ class FavListAdapter(val favorites: ArrayList<News>, listener: FavListAdapter.On
     override fun onBindViewHolder(p0: ViewHolder, p1: Int) {
         val new = favorites[p1]
         p0.icon.setImageResource(new.iconRes)
-        p0.description.text = new.description
+        p0.title.text = new.title
         p0.mNews = new
 
         /*if (DataSource.isFavorite(new)) p0.fav_dislike.setImageResource(R.drawable.favorite)
@@ -61,7 +61,7 @@ class FavListAdapter(val favorites: ArrayList<News>, listener: FavListAdapter.On
         val  mListener = listener
         var mNews=news
         val icon=itemView.findViewById<CircleImageView>(R.id.fav_icon)
-        val description= itemView.findViewById<TextView>(R.id.fav_title)
+        val title= itemView.findViewById<TextView>(R.id.fav_title)
         val fav_dislike = itemView.findViewById<ImageButton>(R.id.fav_dislike)
 
     }

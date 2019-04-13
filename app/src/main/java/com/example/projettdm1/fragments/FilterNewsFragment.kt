@@ -2,6 +2,7 @@ package com.example.projettdm1.fragments
 
 import android.content.Context
 import android.content.SharedPreferences
+import android.content.res.Configuration
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
@@ -11,11 +12,13 @@ import android.widget.ImageButton
 import android.widget.PopupMenu
 import androidx.appcompat.view.menu.MenuBuilder
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projettdm1.DataSource
 import com.example.projettdm1.R
 import com.example.projettdm1.adapters.LinearItemDecoration
+import com.example.projettdm1.adapters.NewsItemLargeScreenDecoration
 import com.example.projettdm1.adapters.NewsListAdapter
 import com.example.projettdm1.models.Categorie
 
@@ -121,9 +124,23 @@ class FilterNewsFragment : Fragment(), PopupMenu.OnMenuItemClickListener {
     fun initNewsList() {
         var recylclerview = vi?.findViewById<RecyclerView>(R.id.filter_news_list)
         val spacingInPixels = resources.getDimensionPixelSize(R.dimen.spacing)
-        recylclerview?.addItemDecoration(LinearItemDecoration(spacingInPixels))
-        recylclerview?.layoutManager =
-            LinearLayoutManager(context, RecyclerView.VERTICAL, false)
+        context?.let {
+
+
+            if (it.resources.configuration.screenLayout.and(Configuration.SCREENLAYOUT_SIZE_MASK) == Configuration.SCREENLAYOUT_SIZE_XLARGE) {
+
+                recylclerview?.addItemDecoration(NewsItemLargeScreenDecoration(spacingInPixels, it))
+                if (it.resources.configuration?.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                    recylclerview?.layoutManager = GridLayoutManager(context, 3)
+                } else recylclerview?.layoutManager = GridLayoutManager(context, 2)
+
+
+            } else {
+                recylclerview?.addItemDecoration(LinearItemDecoration(spacingInPixels))
+                recylclerview?.layoutManager =
+                    LinearLayoutManager(context, RecyclerView.VERTICAL, false)
+            }
+        }
 
         val l=mlistener
         l?.let {

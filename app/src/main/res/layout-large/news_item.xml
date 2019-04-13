@@ -21,7 +21,7 @@
     >
         <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" android:padding="10dp">
+                android:layout_height="wrap_content" android:paddingBottom="20dp">
 
             <ImageButton
                     android:layout_width="28dp"
@@ -29,61 +29,63 @@
                     android:clickable="true"
                     android:layout_height="28dp" app:srcCompat="@drawable/favorite_grey"
                     android:id="@+id/add_to_fav_btn" android:layout_weight="1"
+                    app:layout_constraintStart_toEndOf="@+id/news_category"
+                    app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/news_category"
-                    app:layout_constraintBottom_toBottomOf="@+id/news_category"
-                    app:layout_constraintStart_toEndOf="@+id/news_category" app:layout_constraintEnd_toEndOf="parent"
-                    android:layout_marginEnd="10dp"/>
+                    android:layout_marginEnd="20dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/news_category"/>
             <TextView
                     android:text="Politique"
                     android:textSize="14sp"
                     android:textColor="?attr/textColor"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content" android:id="@+id/news_category"
-                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toTopOf="@+id/linearLayout4" android:layout_marginTop="10dp"
-                    app:layout_constraintEnd_toStartOf="@+id/add_to_fav_btn"
-                    app:layout_constraintHorizontal_chainStyle="spread_inside" android:layout_marginStart="10dp"/>
-            <de.hdodenhof.circleimageview.CircleImageView
-                    android:layout_width="72dp"
-                    android:layout_height="72dp"
-                    android:id="@+id/news_icon"
-                    app:layout_constraintBottom_toBottomOf="@+id/linearLayout4"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/linearLayout4"
-                    android:layout_marginEnd="10dp"/>
+                    app:layout_constraintBottom_toTopOf="@+id/news_title" app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintEnd_toStartOf="@+id/add_to_fav_btn" android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp" android:layout_marginBottom="8dp"/>
+            <TextView
+                    android:textSize="20sp"
+                    android:text="Les etudiants en gève ouverte, jusqu'a quand cette grève"
+                    android:layout_width="match_parent"
+                    android:textColor="?attr/textColor"
+                    android:layout_height="wrap_content" android:id="@+id/news_title"
+
+                    app:layout_constraintTop_toBottomOf="@+id/news_category"
+                    app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
+                    app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="20dp"
+                    android:layout_marginBottom="10dp" app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="46dp"/>
             <LinearLayout
                     android:orientation="vertical"
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/linearLayout4"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/news_category"
-                    app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintEnd_toStartOf="@+id/news_icon" android:layout_marginBottom="10dp"
-                    android:layout_marginEnd="4dp" android:layout_marginStart="10dp">
-                <TextView
-                        android:textSize="18sp"
-                        android:text="Les etudiants en gève ouverte, jusqu'a quand cette grève"
+                    app:layout_constraintTop_toBottomOf="@+id/news_title">
+                <de.hdodenhof.circleimageview.CircleImageView
                         android:layout_width="match_parent"
-                        android:textColor="?attr/textColor"
-                        android:layout_height="wrap_content" android:id="@+id/news_title"
+                        android:layout_height="200dp"
+                        android:id="@+id/news_icon"
 
-                />
+                        android:layout_marginBottom="10dp"/>
                 <TextView
-                        android:textSize="14sp"
+                        android:textSize="16sp"
                         android:text="This is just a long text to test how it fits, This is just a long text to test how it fits,  This is just a long text to test how it fits, This is just a long text to test how it fits, This is just a long text to test how it fits, "
                         android:layout_width="wrap_content"
                         android:maxLines="3"
                         android:textColor="?attr/textColor"
                         android:layout_height="wrap_content" android:id="@+id/news_description"
-                        android:paddingBottom="5dp" android:layout_marginBottom="5dp"/>
+                        android:paddingBottom="5dp" android:layout_marginBottom="5dp" android:layout_marginEnd="20dp"
+                        android:layout_marginStart="20dp"/>
                 <LinearLayout
                         android:orientation="horizontal"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/linearLayout"
-                >
+                        android:layout_marginStart="20dp">
                     <ImageView
                             android:layout_width="24dp"
                             android:layout_height="24dp" app:srcCompat="@drawable/favorite"
