@@ -6,12 +6,14 @@ import android.content.res.ColorStateList
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat
 import com.example.projettdm1.R.color.*
 import com.example.projettdm1.models.News
+import com.google.android.material.card.MaterialCardView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import java.io.Serializable
 
@@ -25,6 +27,12 @@ class Main3Activity : AppCompatActivity() {
         if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
             setTheme(R.style.darkTheme)
         } else setTheme(R.style.AppTheme)
+
+        if (LocaleHelper.lang=="ar") {
+            window.decorView.layoutDirection = View.LAYOUT_DIRECTION_RTL
+        } else {
+            window.decorView.layoutDirection = View.LAYOUT_DIRECTION_LTR
+        }
         setContentView(R.layout.activity_main3)
 
         val bundle = intent.extras
@@ -77,6 +85,10 @@ class Main3Activity : AppCompatActivity() {
                 }
             }
         }
+
+        findViewById<MaterialCardView>(R.id.news_card).setOnClickListener {
+            openLectureMode()
+        }
     }
 
 
@@ -88,6 +100,14 @@ class Main3Activity : AppCompatActivity() {
         intent.putExtra(Intent.EXTRA_SUBJECT, content.title)
         intent.putExtra(Intent.EXTRA_TEXT, content.description)
         startActivity(Intent.createChooser(intent,"Partager via"))
+
+    }
+
+    fun openLectureMode() {
+        currentNew?.let{
+            val intent = lecture_mode.newIntent(this,it)
+            startActivity(intent)
+        }
 
     }
 

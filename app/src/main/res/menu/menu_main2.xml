@@ -18,8 +18,20 @@
 
     <item
           android:id="@+id/action_settings"
-          android:title="Paramètres"
+          android:title="Langues"
           android:orderInCategory="100"
-          app:showAsAction="never" android:layout_height="wrap_content" android:layout_width="wrap_content"/>
-
+          app:showAsAction="never" android:layout_height="wrap_content" android:layout_width="wrap_content">
+        <menu>
+            <item
+                    android:id="@+id/fr_btn"
+                    android:orderInCategory="100"
+                    android:layout_height="wrap_content" android:layout_width="wrap_content"
+                    android:title="Français"/>
+            <item
+                    android:id="@+id/ar_btn"
+                    android:orderInCategory="100"
+                    android:layout_height="wrap_content" android:layout_width="wrap_content"
+                    android:title="العربية"/>
+        </menu>
+    </item>
 </menu>

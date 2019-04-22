@@ -16,6 +16,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.viewpager.widget.ViewPager
 import com.example.projettdm1.adapters.CategoriesListAdapter
@@ -79,6 +80,11 @@ class MainActivity : AppCompatActivity(), NewsListAdapter.OnNewsClickListener,
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        if (LocaleHelper.lang=="ar") {
+            window.decorView.layoutDirection = View.LAYOUT_DIRECTION_RTL
+        } else {
+            window.decorView.layoutDirection = View.LAYOUT_DIRECTION_LTR
+        }
 
         if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
             setTheme(R.style.darkTheme)
@@ -129,6 +135,15 @@ class MainActivity : AppCompatActivity(), NewsListAdapter.OnNewsClickListener,
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
                     restartApp()
                 }
+            }
+            R.id.fr_btn -> {
+                LocaleHelper.setLocale(this,"en")
+                restartApp()
+
+            }
+            R.id.ar_btn -> {
+                LocaleHelper.setLocale(this,"ar")
+                restartApp()
             }
 
                 else -> return false

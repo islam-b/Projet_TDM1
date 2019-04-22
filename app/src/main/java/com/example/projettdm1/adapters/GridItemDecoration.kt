@@ -50,13 +50,13 @@ class GridItemDecoration(spacing: Int, context: Context) : RecyclerView.ItemDeco
                     if (parent.getChildLayoutPosition(view) == 0) {
                         outRect.top = mSpace * 3 / 2
                     }
-                    outRect.left = mSpace * 3 / 2
+                    outRect.left = mSpace  / 2
                     outRect.right = mSpace / 2
                 } else {
                     if (parent.getChildLayoutPosition(view) == 1) {
                         outRect.top = mSpace * 3 / 2
                     }
-                    outRect.right = mSpace * 3 / 2
+                    outRect.right = mSpace / 2
                     outRect.left = mSpace / 2
                 }
                 outRect.bottom = mSpace

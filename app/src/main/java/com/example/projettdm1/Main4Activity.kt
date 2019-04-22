@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.GridLayoutManager
@@ -28,6 +29,12 @@ class Main4Activity : AppCompatActivity(), FavListAdapter.OnNewsClickListener, N
         if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
             setTheme(R.style.darkTheme)
         } else setTheme(R.style.AppTheme)
+
+        if (LocaleHelper.lang=="ar") {
+            window.decorView.layoutDirection = View.LAYOUT_DIRECTION_RTL
+        } else {
+            window.decorView.layoutDirection = View.LAYOUT_DIRECTION_LTR
+        }
         setContentView(R.layout.activity_main4)
 
         var toolbar_fav = findViewById<Toolbar>(R.id.toolbar_fav)
