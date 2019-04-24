@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projettdm1.DataSource
+import com.example.projettdm1.LocaleHelper
 import com.example.projettdm1.R
 import com.example.projettdm1.adapters.LinearItemDecoration
 import com.example.projettdm1.adapters.NewsListAdapter
@@ -52,7 +53,9 @@ class ChipFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view= inflater.inflate(R.layout.fragment_chip, container, false)
-        view.findViewById<Chip>(R.id.cat_chip).text = param1?.Title
+        if(LocaleHelper.lang=="ar") view.findViewById<Chip>(R.id.cat_chip).text = param1?.Title_ar
+        else view.findViewById<Chip>(R.id.cat_chip).text = param1?.Title
+
         view.findViewById<Chip>(R.id.cat_chip).setOnCloseIconClickListener {
             val cat=param1
             cat?.let {

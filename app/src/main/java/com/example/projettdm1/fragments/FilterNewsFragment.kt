@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projettdm1.DataSource
+import com.example.projettdm1.LocaleHelper
 import com.example.projettdm1.R
 import com.example.projettdm1.adapters.LinearItemDecoration
 import com.example.projettdm1.adapters.NewsItemLargeScreenDecoration
@@ -80,7 +81,9 @@ class FilterNewsFragment : Fragment(), PopupMenu.OnMenuItemClickListener {
             var empty = true
             for (i in 0 until DataSource.categoriesList.size) {
                 if (!DataSource.isConstreint(i)) {
-                    popupMenu.menu.add(Menu.NONE,i,i,DataSource.categoriesList[i].Title)
+                    if(LocaleHelper.lang=="ar") popupMenu.menu.add(Menu.NONE,i,i,DataSource.categoriesList[i].Title_ar)
+                    else popupMenu.menu.add(Menu.NONE,i,i,DataSource.categoriesList[i].Title)
+
                     empty=false
                 }
             }

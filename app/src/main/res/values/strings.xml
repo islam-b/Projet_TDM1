@@ -5,8 +5,8 @@
     <string name="categories">Catégories</string>
     <string name="lectures">Lectures</string>
     <string name="lang">Langues</string>
-    <string name="fr">Français</string>
-    <string name="ar">Arabe</string>
+    <string name="fr">Français - الفرنسية</string>
+    <string name="ar">Arabe - العربية</string>
     <string name="show_more">Voir plus ... </string>
     <string name="section_format">Hello World from section: %1$d</string>
 
