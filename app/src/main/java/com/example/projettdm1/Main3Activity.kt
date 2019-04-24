@@ -57,8 +57,14 @@ class Main3Activity : AppCompatActivity() {
     }
 
     fun initView() {
-        findViewById<TextView>(R.id.title_info).text =currentNew?.title
-        findViewById<TextView>(R.id.detail_info).text =currentNew?.description
+        if (LocaleHelper.lang=="ar") {
+            findViewById<TextView>(R.id.title_info).text =currentNew?.title_ar
+            findViewById<TextView>(R.id.detail_info).text =currentNew?.description_ar
+        } else {
+            findViewById<TextView>(R.id.title_info).text =currentNew?.title
+            findViewById<TextView>(R.id.detail_info).text =currentNew?.description
+        }
+
         findViewById<TextView>(R.id.date_info).text =currentNew?.date
         currentNew?.iconRes?.let {
             findViewById<ImageView>(R.id.image_info).setImageResource(it)

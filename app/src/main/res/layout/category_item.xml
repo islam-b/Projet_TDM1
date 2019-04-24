@@ -33,13 +33,13 @@
                 android:id="@+id/category_title"
 
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:paddingStart="16dp"/>
+                android:layout_height="wrap_content" android:paddingStart="16dp" android:paddingEnd="16dp"/>
         <TextView
-                android:text="TextView"
+                android:text="@string/show_more"
                 android:textSize="14dp"
                 android:textColor="?attr/textColor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/category_decription"
-                android:paddingStart="16dp"/>
+                android:paddingStart="16dp" android:paddingEnd="16dp"/>
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>

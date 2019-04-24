@@ -6,6 +6,7 @@ import kotlinx.android.parcel.RawValue
 import java.io.Serializable
 
 @Parcelize
-data class News(val iconRes: Int,val  date: String,  val source: String ,val srcIcon: Int, val title: String, val description: String, val categorie: @RawValue  Categorie) : Parcelable  {
+data class News(val iconRes: Int,val  date: String,  val source: String ,val source_ar: String, val srcIcon: Int, val title: String,val title_ar: String,
+                val description: String, val description_ar: String, val categorie: @RawValue  Categorie) : Parcelable  {
 
 }

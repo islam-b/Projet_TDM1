@@ -9,6 +9,7 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import com.example.projettdm1.DataSource
+import com.example.projettdm1.LocaleHelper
 import com.example.projettdm1.R
 import com.example.projettdm1.models.Categorie
 import com.example.projettdm1.models.News
@@ -32,11 +33,19 @@ class NewsListAdapter(val news: ArrayList<News>, listener: NewsListAdapter.OnNew
         val new = news[p1]
         p0.icon.setImageResource(new.iconRes)
         p0.source_icon.setImageResource(new.srcIcon)
-        p0.title.text = new.title
-        p0.description.text = new.description
-        p0.source.text = new.source
         p0.date.text = new.date
-        p0.categorie.text = new.categorie.Title
+        if (LocaleHelper.lang == "ar") {
+            p0.title.text = new.title_ar
+            p0.description.text = new.description_ar
+            p0.source.text = new.source_ar
+            p0.categorie.text = new.categorie.Title_ar
+        } else {
+            p0.title.text = new.title
+            p0.description.text = new.description
+            p0.source.text = new.source
+            p0.categorie.text = new.categorie.Title
+        }
+
 
         if (DataSource.isFavorite(new)) p0.add_to_fav_button.setImageResource(R.drawable.favorite)
         else p0.add_to_fav_button.setImageResource(R.drawable.favorite_grey)

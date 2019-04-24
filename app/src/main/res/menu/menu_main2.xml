@@ -18,7 +18,7 @@
 
     <item
           android:id="@+id/action_settings"
-          android:title="Langues"
+          android:title="@string/lang"
           android:orderInCategory="100"
           app:showAsAction="never" android:layout_height="wrap_content" android:layout_width="wrap_content">
         <menu>
@@ -26,12 +26,12 @@
                     android:id="@+id/fr_btn"
                     android:orderInCategory="100"
                     android:layout_height="wrap_content" android:layout_width="wrap_content"
-                    android:title="Français"/>
+                    android:title="@string/fr"/>
             <item
                     android:id="@+id/ar_btn"
                     android:orderInCategory="100"
                     android:layout_height="wrap_content" android:layout_width="wrap_content"
-                    android:title="العربية"/>
+                    android:title="@string/ar"/>
         </menu>
     </item>
 </menu>

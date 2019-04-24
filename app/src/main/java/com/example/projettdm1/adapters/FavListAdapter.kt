@@ -9,6 +9,7 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import com.example.projettdm1.DataSource
+import com.example.projettdm1.LocaleHelper
 import com.example.projettdm1.R
 import com.example.projettdm1.models.Categorie
 import com.example.projettdm1.models.News
@@ -31,7 +32,8 @@ class FavListAdapter(val favorites: ArrayList<News>, listener: FavListAdapter.On
     override fun onBindViewHolder(p0: ViewHolder, p1: Int) {
         val new = favorites[p1]
         p0.icon.setImageResource(new.iconRes)
-        p0.title.text = new.title
+        if (LocaleHelper.lang=="ar") p0.title.text = new.title_ar
+        else p0.title.text = new.title
         p0.mNews = new
 
         /*if (DataSource.isFavorite(new)) p0.fav_dislike.setImageResource(R.drawable.favorite)

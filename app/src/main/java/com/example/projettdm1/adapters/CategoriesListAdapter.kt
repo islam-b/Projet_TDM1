@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
+import com.example.projettdm1.LocaleHelper
 import com.example.projettdm1.R
 import com.example.projettdm1.models.Categorie
 
@@ -29,8 +30,9 @@ class CategoriesListAdapter(val categories: ArrayList<Categorie>, listener: OnCa
         val category = categories[p1]
         //p0.icon.setImageDrawable(ContextCompat.getDrawable(mListener as Context, category.imageRes))
         p0.icon.setImageResource(category.imageRes)
-        p0.title.text = category.Title
-        p0.description.text = category.Description
+        if (LocaleHelper.lang=="ar") p0.title.text = category.Title_ar
+        else p0.title.text = category.Title
+
     }
 
 
@@ -46,8 +48,6 @@ class CategoriesListAdapter(val categories: ArrayList<Categorie>, listener: OnCa
         val  mListener = listener
         val icon=itemView.findViewById<ImageView>(R.id.category_icon)
         val title= itemView.findViewById<TextView>(R.id.category_title)
-        val description = itemView.findViewById<TextView>(R.id.category_decription)
-
 
     }
 
