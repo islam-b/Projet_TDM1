@@ -84,10 +84,6 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/linearLayout"
                 >
-                    <ImageView
-                            android:layout_width="24dp"
-                            android:layout_height="24dp" app:srcCompat="@drawable/favorite"
-                            android:id="@+id/src_icon" android:layout_weight="1"/>
                     <TextView
                             android:text="El Watan"
                             android:textSize="14sp"
@@ -95,7 +91,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="22dp" android:id="@+id/news_source"
 
-                            android:paddingEnd="4dp" android:paddingStart="4dp"/>
+                            android:paddingEnd="4dp"/>
                     <TextView
                             android:text=" - "
                             android:textSize="14sp"

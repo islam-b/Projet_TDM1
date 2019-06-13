@@ -23,6 +23,15 @@ import com.example.projettdm1.models.News
 
 class Main4Activity : AppCompatActivity(), FavListAdapter.OnNewsClickListener, NewsListAdapter.OnNewsClickListener {
 
+    override fun OnDislikeClick(new: News) {
+        if (DataSource.isFavorite(new)) {
+            DataSource.removeFromFavorites(new)
+        } else {
+            DataSource.addToFavorites(new)
+        }
+        initFav()
+    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

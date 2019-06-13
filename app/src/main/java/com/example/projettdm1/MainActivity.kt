@@ -171,10 +171,10 @@ class MainActivity : AppCompatActivity(), NewsListAdapter.OnNewsClickListener,
             // Return a PlaceholderFragment (defined as a static inner class below).
             val fragment: Fragment
             when (position) {
-                0 -> fragment = NewsFragment.newInstance("p1","p2")
+                0 -> fragment = NewsFragment.newInstance()
                 1 -> fragment = CategoriesFragment.newInstance("p1","p2")
                 2 -> fragment = NewsFilteredContainer.newInstance("p1","p2")
-                else -> fragment = NewsFragment.newInstance("p1","p2")
+                else -> fragment = NewsFragment.newInstance()
             }
             return fragment
         }

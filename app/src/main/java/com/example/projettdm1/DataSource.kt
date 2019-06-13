@@ -20,15 +20,14 @@ object DataSource {
         val education =  Categorie(R.drawable.education,"Education","تعليم")
         val divers =  Categorie(R.drawable.divers,"Divers","متنوع")
 
-
-        val news1=News(R.drawable.news1,"24/04/2019","El Watan","الوطن",R.drawable.a,
+        val news1=News(R.drawable.news1,"24/04/2019","El Watan","الوطن",
             "La révolution populaire en Algérie peut dégénérer", "الثورة الشعبية في الجزائر يمكن أن تتدهور",
             "Si «la révolution populaire» qui frappe l'Algérie depuis le 22 février dernier ne connait pas rapidement une issue positive, «elle peut dégénérer», a déclaré à Sputnik Ali Benouari, ex-ministre algérien du Trésor et expert international en finance. Il estime que le haut commandement de l'Armée nationale populaire (ANP) algérienne, en la personne du général de corps d'armée Ahmed Gaïd Salah, chef d'État-major, était tenu d'apporter des réponses rapides et convaincantes aux aspirations populaires.\n" +
                     "«D'après moi, la situation est dangereuse», a déclaré l'ancien ministre du Trésor. «Nous avons à faire à une révolution pacifique, mais enfin, il ne faut pas tomber dans les travers d'une vision romantique de l'évolution et de l'aboutissement de cette révolution. Elle peut dégénérer. Il peut y avoir des dérapages. Tout dépend maintenant des décisions que prendra le chef d'État-major de l'armée algérienne», a-t-il expliqué.",
             " قال سبوتنيك علي بنواري ، وزير الخزانة الجزائري السابق والخبير الدولي في الشؤون المالية إذا كانت «الثورة الشعبية»  التي تضرب الجزائر منذ 22 فبراير لا تعرف بسرعة نتيجة إيجابية «فإنها يمكن أن تتدهور» . وهو يعتقد أن القيادة العليا للجيش الشعبي الوطني الجزائري (ANP) ، برئاسة الفريق أحمد جايد صلاح ، رئيس الأركان ، كانت مطلوبة لتقديم ردود سريعة ومقنعة على التطلعات شعبية. وقال وزير الخزانة السابق «في رأيي ، الوضع خطير» يتعين علينا القيام به لثورة سلمية ، ولكن في النهاية ، يجب ألا نقع في فخ رؤية رومانسية للتطور ونتائج هذه الثورة. يمكن أن تتحلل. يمكن أن يكون هناك التزلج. كل شيء الآن يعتمد على القرارات التي ستتخذ رئيس أركان الجيش الجزائري",
             politique)
 
-        val news2=News(R.drawable.news2,"24/04/2019","Echourouk","الشروق",R.drawable.a,
+        val news2=News(R.drawable.news2,"24/04/2019","Echourouk","الشروق",
             "Cour suprême : Un dossier de plainte contre Chakib Khelil réceptionné", "المحكمة العليا: تلقت شكوى ضد شكيب خليل",
             "La Cour suprême a reçu hier mardi les dossiers de poursuite contre l’ancien ministre de l’Énergie, Chakib Khelil et ses acolytes. Dans un communiqué rendu publique, la Cour suprême indique que  « les dossiers portent sur des affaires liées aux infractions au change et le transfert des capitaux de et vers l’Algérie ». Ainsi que « la conclusion des contrats de la Sonatrach avec deux entreprises étrangères».\n" +
                     "\n" +
@@ -42,7 +41,7 @@ object DataSource {
                             "الفن. 573 (القانون رقم 90-24 المؤرخ 18 أغسطس 1990) ينص على أنه \"من المحتمل أن يكون قاضٍ في المحكمة العليا أو الوالي أو رئيس المحكمة أو المدعي العام في المحكمة يحيل المدعي العام الذي نظر في القضية ، بتهمة ارتكاب جريمة أو جريمة ارتكبت في ممارسة أو ممارسة وظائفها ، الملف ، هرميًا ، إلى النائب العام في المحكمة العليا تعيين عضو في المحكمة العليا لتقديم المعلومات.",
             politique)
 
-        val news3=News(R.drawable.news3,"25/04/2019","Ennahar","النهار",R.drawable.a,
+        val news3=News(R.drawable.news3,"25/04/2019","Ennahar","النهار",
             "Sonatrach : Les privilèges accordés par Ould Kaddour à des compagnies étrangères", "سوناتراك: الامتيازات التي يمنحها ولد قدور للشركات الأجنبية",
                     "Deux mois sont passés depuis le début de la révolution populaire pacifique. Ces dernières semaines, on a pu assister à un feuilleton judiciaire plain de rebondissements. Les langues commencent donc à se délier et les grosses affaires remontent à la surface. L’une d’elles concerne la source de revenus du pays (Sonatrach) est son ex-PDG, le très controversé Abdelmoumen Ould Kaddour.  \n" +
                             "\n" +
@@ -68,7 +67,7 @@ object DataSource {
                             "كما أشار المصدر نفسه إلى أن الجزائر قد جددت عقد تعدين في رواسب In Amenas من خلال تقديم 20 ثانية من الاستغلال الإضافي لشركة ريبسول الإسبانية!",
             politique)
 
-        val news4=News(R.drawable.news4,"25/04/2019","Liberté","الحرية",R.drawable.a,
+        val news4=News(R.drawable.news4,"25/04/2019","Liberté","الحرية",
 
                     "Moussa Naït-Amara à Bouira\n" +
                     "“Rebrab est victime de son patriotisme économique”\n", "موسى ناع عمارة في البويرة\n" +
@@ -90,7 +89,7 @@ object DataSource {
                     "\"من يحكم من؟ إن العدالة ، الحقيقية ، لا يمكن أن تكون فعالة وذات مصداقية إلا في ظل ظروف سيادة القانون. الآن ، في الوقت الحاضر ، يطالب الشارع برحيل جميع شخصيات النظام ، وليس حكمهم. وقال العضو السابق في بنك MCB: \"عندما نبني سيادة القانون والعدالة ستكون حرة ومستقلة ، فسوف يدفعون جميعًا\".",
             politique)
 
-        val news5=News(R.drawable.news5,"24/04/2019","El Haddaf","الوطن",R.drawable.a,
+        val news5=News(R.drawable.news5,"24/04/2019","El Haddaf","الوطن",
             "Et si Guardiola entraînait Ronaldo ?", "ماذا لو قام جوارديولا بتدريب رونالدو؟",
             "Arrivé en 2016 sur le banc de Manchester City, Pep Guardiola avait prolongé, en mai dernier, son contrat jusqu’en 2021, avec un salaire annuel passant de 15 à 20 millions de livres, soit un peu plus de 23 millions d’euros par an. Et s’il avait parlé cet hiver de la possibilité d’une nouvelle prolongation, il n’a plus évoqué le sujet depuis, notamment après la nouvelle élimination des Citizens en quarts de finale de la Ligue des champions.\n" +
                     "\n" +
@@ -100,7 +99,7 @@ object DataSource {
                     "لكن وفقًا لويجي غيلبا ، الصحفي الإيطالي من إل جورنال الذي أعلن قبل وصول العالم أجمع عن وصول كريستيانو رونالدو إلى يوفنتوس ، كان الفني الكاتالوني قد وافق بالفعل مع السيدة العجوز على عقد مدته 4 سنوات ، أكد الشهر الماضي على الهواء من راديو CRC.",
             sport)
 
-        val news6=News(R.drawable.news6,"24/04/2019","El Haddaf","الشباك",R.drawable.a,
+        val news6=News(R.drawable.news6,"24/04/2019","El Haddaf","الشباك",
             "Doukha : \"Il y avait un accord avec la victoire mais ...\"", "دوخة: “كان هناك إتفاق مع النصر ولكن..”",
             "Le gardien international algérien Ezzeddin Douakha a révélé qu'il était sur le point de rejoindre le géant saoudien Al-Nasr.\n" +
 
@@ -117,7 +116,7 @@ object DataSource {
                     "من جهة أخرى أكد الحارس السابق لإتحاد الحراش، أن توقيعه مع الرائد السعودي كان عن قناعة، والديل على ذلك تألقه الكبير مع الفريق خلال الموسم الحالي.\n",
             sport)
 
-        val news7=News(R.drawable.news7,"23/04/2019","L'Express","الاكسبريس",R.drawable.a,
+        val news7=News(R.drawable.news7,"23/04/2019","L'Express","الاكسبريس",
             "Une riche Saoudienne poursuivie à Paris pour traite d'êtres humains", "دعوى قضائية ضد امرأة سعودية غنية في باريس بسبب تهريب البشر",
 
                     "Une riche saoudienne résidant à deux pas de la Tour Eiffel est poursuivie à Paris pour traite d'être humains, travail dissimulé et emploi d'étrangers non munis d'une autorisation de travail.\n" +
@@ -136,7 +135,7 @@ object DataSource {
                     "على سبيل المثال ، أخبرت موظفة الشرطة أنها احتجزتها الفنانة ، التي قُبض عليها واحتُجزت في 18 أبريل / نيسان قبل استدعائها إلى المحكمة في 7 مايو / أيار. وقال المحققون للنقطة إن \"عاملات المنازل تعرضن لظروف عمل وإقامة تتعارض مع كرامة الإنسان\".",
             societe)
 
-        val news8=News(R.drawable.news8,"25/04/2019","L'Express","الاكسبريس",R.drawable.a,
+        val news8=News(R.drawable.news8,"25/04/2019","L'Express","الاكسبريس",
             "Sanofi: Journée d’information et de formation dédiée aux journalistes", " سانوفي: يوم معلومات وتدريب مخصص للصحفيين",
 
             "Sanofi Algérie à organiser à une journée d’information workshop dédiée aux journalistes qui souhaitent en apprendre davantage sur différentes pathologies et ainsi enrichir leur connaissance techniques sur les sujets liés à la santé.\n" +
@@ -151,6 +150,42 @@ object DataSource {
                         "\"هذه هي الطريقة التي يتناسب بها هدف هذا اليوم مع طموحنا في أن نكون الشريك المرجعي لجميع الجهات الفاعلة التي تعمل في مجال الصحة في الجزائر ، خاصةً مع وسائل الإعلام التي يتمثل دورها في المعلومات المتعلقة بالصحة\" من الأمور الأساسية ، وخاصة لمكافحة المفاهيم الخاطئة ، إعلام ورفع الوعي حول مخاطر ووسائل الوقاية. يقول ريم فتوش ، مدير الاتصالات",
             sante)
 
+        val news9=News(R.drawable.news9,"25/04/2019","L'Express","الاكسبريس",
+            "Les dates du bac, du BEM et de la 5e fixées", "مواعيد البكالوريا ، بيم والخامس محددة ",
+
+
+                    "Le ministère de l'Éducation nationale a rendu  public, jeudi, dans un communiqué, le calendrier des examens nationaux des trois paliers pour l'année scolaire 2018/2019 (bac, BEM et 5e). L'examen du baccalauréat aura lieu du 16 au 20 juin, celui du Brevet d'enseignement moyen (BEM) du 9 au 11 juin, tandis que l'examen de la 5e année primaire est fixé au 29 mai, a précisé la même source.\n",
+            "أصدرت وزارة التربية والتعليم يوم الخميس ، في بيان ، جدول الامتحانات الوطنية من ثلاثة مستويات للعام الدراسي 2018/2019 (البكالوريا ، BEM و 5). وقال المصدر نفسه إن امتحان البكالوريا سيعقد في الفترة من 16 إلى 20 يونيو ، وشهادة التعليم المتوسط  (BEM) من 9 إلى 11 يونيو ، بينما من المقرر إجراء امتحان السنة الخامسة الابتدائية في 29 مايو. ",
+            education)
+
+        val news10=News(R.drawable.news10,"26/04/2019","El Watan","الوطن",
+            "Les Etats-Unis ont enregistré une croissance de 3,2 % au premier trimestre 2019", "نمت الولايات المتحدة بنسبة 3.2 ٪ في الربع الأول من عام 2019",
+
+
+            "Les Cassandre en sont de nouveau pour leurs frais et l’Amérique de Donald Trump triomphe : la croissance de l’économie des Etats-Unis s’est établie à 3,2 % en rythme annuel au premier trimestre 2019. C’est beaucoup mieux que les + 2,5 % attendus par les experts interrogés par le Wall Street Journal.\n" +
+                    "\n" +
+                    "Le chiffre publié vendredi 26 avril est certes provisoire ; il peut encore être révisé. Il n’empêche, il confirme que le « shutdown », la fermeture provisoire de l’administration fédérale au début de l’année, a occupé le Landerneau à Washington mais il n’a pas affecté l’économie des cinquante Etats.",
+            "عادت كاساندراس لنفقاتها وانتصار دونالد ترامب في أمريكا: كان نمو الاقتصاد الأمريكي 3.2 ٪ على أساس سنوي في الربع الأول من عام 2019. إنه أفضل بكثير من + 2.5 ٪ المتوقعة من قبل خبراء قابلتهم صحيفة وول ستريت جورنال.\n" +
+                    "\n" +
+                    "الرقم المنشور الجمعة 26 أبريل مؤقت بالتأكيد. لا يزال من الممكن تنقيحها. ومع ذلك ، فهو يؤكد أن \"الإغلاق\" ، وهو الإغلاق المؤقت للإدارة الفيدرالية في بداية العام ، احتل Landerneau في واشنطن لكنه لم يؤثر على اقتصاد الولايات الخمسين.",
+            economie)
+
+        val news11=News(R.drawable.news11,"26/04/2019","El Watan","الوطن",
+            "Interpellés pour vol à l'étalage, deux hommes découverts en possession de 160 pots de Nutella", "تم القبض على رجلين لقيامهما بسرقة السرقة ، ووجدا بحوزتهما 160 وعاء من نوتيلا",
+
+
+            "Les policiers de la commune d'Arras, dans le Pas-de-Calais, ont fait une drôle de découverte. Mercredi 24 avril, deux hommes ont été interpellés à la sortie d'un supermarché Lidl dans lequel ils venaient de dérober plusieurs bouteilles d'alcool, pour un montant global estimé à 150 euros, rapporte La Voix du Nord.\n" +
+                    "\n" +
+                    "Au cours de leur enquête, les policiers ont par ailleurs découvert que les deux suspects étaient en possession de 160 pots de pâte à tartiner Nutella, ainsi que de faux papiers d'identité et de faux chèques, a indiqué le parquet d'Arras.\n" +
+                    "\n" +
+                    "Les deux hommes, qui ont été placés en garde à vue, n'ont pas expliqué dans l'immédiat l'origine de leur marchandise, ni comment et où ils souhaitaient l'écouler.",
+            "قامت شرطة بلدة أراس ، في با دو كاليه ، باكتشاف غريب. الأربعاء 24 أبريل ، تم القبض على رجلين عند الخروج من سوبر ماركت Lidl حيث كان عليهما سرقة عدة زجاجات من الكحول ، بمبلغ إجمالي يقدر بـ 150 يورو ، وفقًا لتقارير La Voix du Nord.\n" +
+                    "\n" +
+                    "وخلال التحقيق معهم ، اكتشفت الشرطة أيضًا أن المشتبه بهما كانا بحوزتهما 160 جرة من نوتيلة منتشرة ، بالإضافة إلى أوراق هوية مزورة وشيكات مزورة ، حسبما ذكر مكتب المدعي العام في أراس.\n" +
+                    "\n" +
+                    "لم يشرح الرجلان ، اللذان تم احتجازهما ، على الفور منشأ بضائعهم ، وكيف وأين يريدون التخلص منها.",
+            divers)
+
 
         newsList.add(news1)
         newsList.add(news2)
@@ -160,6 +195,9 @@ object DataSource {
         newsList.add(news6)
         newsList.add(news7)
         newsList.add(news8)
+        newsList.add(news9)
+        newsList.add(news10)
+        newsList.add(news11)
 
 
         newsList.shuffle()

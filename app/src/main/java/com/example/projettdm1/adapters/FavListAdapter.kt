@@ -40,11 +40,10 @@ class FavListAdapter(val favorites: ArrayList<News>, listener: FavListAdapter.On
         else p0.fav_dislike.setImageResource(R.drawable.favorite_grey)*/
 
         p0.fav_dislike.setOnClickListener {
+            p0.mListener.OnDislikeClick(new)
             if (DataSource.isFavorite(new)) {
-                DataSource.removeFromFavorites(new)
                 p0.fav_dislike.setImageResource(R.drawable.favorite_grey)
             } else {
-                DataSource.addToFavorites(new)
                 p0.fav_dislike.setImageResource(R.drawable.favorite)
             }
 
@@ -69,6 +68,8 @@ class FavListAdapter(val favorites: ArrayList<News>, listener: FavListAdapter.On
     }
     interface OnNewsClickListener{
         fun OnNewsClick(news: News)
+        fun OnDislikeClick(new: News)
     }
+
 
 }

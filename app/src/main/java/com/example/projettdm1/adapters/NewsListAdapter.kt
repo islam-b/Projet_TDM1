@@ -32,7 +32,6 @@ class NewsListAdapter(val news: ArrayList<News>, listener: NewsListAdapter.OnNew
     override fun onBindViewHolder(p0: ViewHolder, p1: Int) {
         val new = news[p1]
         p0.icon.setImageResource(new.iconRes)
-        p0.source_icon.setImageResource(new.srcIcon)
         p0.date.text = new.date
         if (LocaleHelper.lang == "ar") {
             p0.title.text = new.title_ar
@@ -78,7 +77,6 @@ class NewsListAdapter(val news: ArrayList<News>, listener: NewsListAdapter.OnNew
         val description= itemView.findViewById<TextView>(R.id.news_description)
         val title= itemView.findViewById<TextView>(R.id.news_title)
         val source= itemView.findViewById<TextView>(R.id.news_source)
-        val source_icon= itemView.findViewById<ImageView>(R.id.src_icon)
         val date= itemView.findViewById<TextView>(R.id.news_date)
         val categorie= itemView.findViewById<TextView>(R.id.news_category)
         val add_to_fav_button=itemView.findViewById<ImageButton>(R.id.add_to_fav_btn)

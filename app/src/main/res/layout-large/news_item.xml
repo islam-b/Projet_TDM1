@@ -86,24 +86,6 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/linearLayout"
                         android:layout_marginStart="20dp">
-                    <ImageView
-                            android:layout_width="24dp"
-                            android:layout_height="24dp" app:srcCompat="@drawable/favorite"
-                            android:id="@+id/src_icon" android:layout_weight="1"/>
-                    <TextView
-                            android:text="05/04/2019"
-                            android:textSize="14sp"
-                            android:textColor="?attr/textColor"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent" android:id="@+id/news_date"
-                            android:paddingTop="2dp" android:paddingStart="4dp"/>
-                    <TextView
-                            android:text=" - "
-                            android:textSize="14sp"
-                            android:textColor="?attr/textColor"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" android:id="@+id/textView2" android:layout_weight="1"
-                            android:paddingEnd="5dp" android:paddingStart="5dp"/>
                     <TextView
                             android:text="El Watan"
                             android:textSize="14sp"
@@ -112,6 +94,20 @@
                             android:layout_height="22dp" android:id="@+id/news_source"
 
                     />
+                    <TextView
+                            android:text=" - "
+                            android:textSize="14sp"
+                            android:textColor="?attr/textColor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:id="@+id/textView2" android:layout_weight="1"
+                            android:paddingEnd="5dp" android:paddingStart="5dp"/>
+                    <TextView
+                            android:text="05/04/2019"
+                            android:textSize="14sp"
+                            android:textColor="?attr/textColor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent" android:id="@+id/news_date"
+                            android:paddingTop="2dp" android:paddingStart="4dp"/>
                 </LinearLayout>
             </LinearLayout>
 

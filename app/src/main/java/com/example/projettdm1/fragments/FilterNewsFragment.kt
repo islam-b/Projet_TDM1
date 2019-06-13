@@ -106,9 +106,10 @@ class FilterNewsFragment : Fragment(), PopupMenu.OnMenuItemClickListener {
     }
 
     fun initChips(view: View) {
-
-        val firstCategory = DataSource.filterContreints[0]
-        listener?.onChipClick(firstCategory)
+        if (!DataSource.filterContreints.isEmpty()) {
+            val firstCategory = DataSource.filterContreints[0]
+            listener?.onChipClick(firstCategory)
+        }
     }
 
     override fun onResume() {
