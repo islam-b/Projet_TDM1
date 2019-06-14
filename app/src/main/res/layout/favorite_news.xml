@@ -7,7 +7,7 @@
                                                      android:layout_width="match_parent"
                                                      android:layout_height="match_parent"
                                                      android:fitsSystemWindows="true"
-                                                     tools:context=".Main4Activity">
+                                                     tools:context=".FavoriteNews">
 
     <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/appbar"
@@ -35,11 +35,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" android:layout_marginTop="60dp">
 
-            <androidx.recyclerview.widget.RecyclerView android:layout_width="match_parent"
-                                                       android:layout_height="wrap_content"
-                                                        android:id="@+id/fav_list_container">
+        <androidx.recyclerview.widget.RecyclerView android:layout_width="match_parent"
+                                                   android:layout_height="wrap_content"
+                                                   android:id="@+id/fav_list_container">
 
-            </androidx.recyclerview.widget.RecyclerView>
+        </androidx.recyclerview.widget.RecyclerView>
     </LinearLayout>
 
 

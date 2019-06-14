@@ -18,7 +18,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import java.io.Serializable
 
 
-class Main3Activity : AppCompatActivity() {
+class NewsDetails : AppCompatActivity() {
 
 
     private var currentNew:News?=null
@@ -33,7 +33,7 @@ class Main3Activity : AppCompatActivity() {
         } else {
             window.decorView.layoutDirection = View.LAYOUT_DIRECTION_LTR
         }
-        setContentView(R.layout.activity_main3)
+        setContentView(R.layout.news_details)
 
         val bundle = intent.extras
         bundle?.let {
@@ -119,7 +119,7 @@ class Main3Activity : AppCompatActivity() {
 
     companion object {
         fun newIntent(context: Context, news: News): Intent {
-            val intent= Intent(context, Main3Activity::class.java)
+            val intent= Intent(context, NewsDetails::class.java)
             Log.d("NEWS",news.description)
             intent.putExtra("NEWS",news)
             //intent.putExtra("TITLE",news.description)

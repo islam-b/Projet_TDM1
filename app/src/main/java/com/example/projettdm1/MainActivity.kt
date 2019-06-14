@@ -26,15 +26,16 @@ import com.example.projettdm1.models.Categorie
 import com.example.projettdm1.models.News
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
+import kotlinx.android.synthetic.main.activity_main.*
 
-import kotlinx.android.synthetic.main.activity_main2.*
+
 
 class MainActivity : AppCompatActivity(), NewsListAdapter.OnNewsClickListener,
     CategoriesListAdapter.OnCategoryClickListener ,
     FilterNewsFragment.OnChipClickListener , ChipFragment.OnCloseListener,NewsFilteredContainer.OnFragmentInteractionListener {
 
     override fun OnNewsClick(news: News) {
-       val intent = Main3Activity.newIntent(this,news)
+       val intent = NewsDetails.newIntent(this,news)
                startActivity(intent)
     }
 
@@ -42,7 +43,7 @@ class MainActivity : AppCompatActivity(), NewsListAdapter.OnNewsClickListener,
         DataSource.clearConstreints()
         Log.d("POSITION",position.toString())
         DataSource.addFilterContreint(position)
-        val fragment = FilterNewsFragment.newInstance("p1","p2")
+        val fragment = FilterNewsFragment.newInstance()
         findViewById<ViewPager>(R.id.container).setCurrentItem(2,true)
 
         supportFragmentManager.beginTransaction().replace(R.id.news_filtered_container,fragment).commit()
@@ -58,7 +59,7 @@ class MainActivity : AppCompatActivity(), NewsListAdapter.OnNewsClickListener,
 
     override fun onChipClick(category: Categorie) {
         val fragment = ChipFragment.newInstance(category)
-        val container=findViewById<ChipGroup>(R.id.chips_container)
+
         supportFragmentManager.beginTransaction().
             add(R.id.chips_container,fragment).commit()
     }
@@ -90,7 +91,7 @@ class MainActivity : AppCompatActivity(), NewsListAdapter.OnNewsClickListener,
             setTheme(R.style.darkTheme)
         } else setTheme(R.style.AppTheme)
 
-        setContentView(R.layout.activity_main2)
+        setContentView(R.layout.activity_main)
 
         setSupportActionBar(toolbar)
 
@@ -124,7 +125,7 @@ class MainActivity : AppCompatActivity(), NewsListAdapter.OnNewsClickListener,
         val id = item.itemId
         when (id) {
             R.id.favorite_btn -> {
-                val intent = Main4Activity.newIntent(this)
+                val intent = FavoriteNews.newIntent(this)
                 startActivity(intent)
             }
             R.id.mode_btn -> {
@@ -172,8 +173,8 @@ class MainActivity : AppCompatActivity(), NewsListAdapter.OnNewsClickListener,
             val fragment: Fragment
             when (position) {
                 0 -> fragment = NewsFragment.newInstance()
-                1 -> fragment = CategoriesFragment.newInstance("p1","p2")
-                2 -> fragment = NewsFilteredContainer.newInstance("p1","p2")
+                1 -> fragment = CategoriesFragment.newInstance()
+                2 -> fragment = NewsFilteredContainer.newInstance()
                 else -> fragment = NewsFragment.newInstance()
             }
             return fragment
@@ -182,6 +183,13 @@ class MainActivity : AppCompatActivity(), NewsListAdapter.OnNewsClickListener,
         override fun getCount(): Int {
             // Show 3 total pages.
             return 3
+        }
+    }
+
+    companion object {
+        fun newIntent(context: Context): Intent {
+            val intent= Intent(context, MainActivity::class.java)
+            return intent
         }
     }
 

@@ -43,8 +43,7 @@ class FilterNewsFragment : Fragment(), PopupMenu.OnMenuItemClickListener {
 
 
     // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+
     private var listener: OnChipClickListener? = null
     private var mlistener: NewsListAdapter.OnNewsClickListener? = null
 
@@ -52,8 +51,7 @@ class FilterNewsFragment : Fragment(), PopupMenu.OnMenuItemClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+
         }
     }
 
@@ -68,7 +66,7 @@ class FilterNewsFragment : Fragment(), PopupMenu.OnMenuItemClickListener {
         val view= inflater.inflate(R.layout.fragment_filter_news, container, false)
         vi=view
         initMenu(view)
-        initChips(view)
+        initChips()
         initNewsList()
         return vi
     }
@@ -105,7 +103,7 @@ class FilterNewsFragment : Fragment(), PopupMenu.OnMenuItemClickListener {
         return true
     }
 
-    fun initChips(view: View) {
+    fun initChips() {
         if (!DataSource.filterContreints.isEmpty()) {
             val firstCategory = DataSource.filterContreints[0]
             listener?.onChipClick(firstCategory)
@@ -205,11 +203,10 @@ class FilterNewsFragment : Fragment(), PopupMenu.OnMenuItemClickListener {
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
+        fun newInstance() =
             FilterNewsFragment().apply {
                 arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+
                 }
             }
     }
