@@ -31,13 +31,13 @@ class NewsItemLargeScreenDecoration(spacing: Int, context: Context) : RecyclerVi
                     outRect.top = mSpace * 3 / 2
                 }
                 outRect.left = mSpace * 3 / 2
-                outRect.right = mSpace / 2
+                outRect.right = mSpace *3 / 2
             } else {
                 if (parent.getChildLayoutPosition(view) == 1) {
                     outRect.top = mSpace * 3 / 2
                 }
                 outRect.right = mSpace * 3 / 2
-                outRect.left = mSpace / 2
+                outRect.left = mSpace *3 / 2
             }
             outRect.bottom = mSpace
         }

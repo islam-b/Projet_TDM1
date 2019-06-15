@@ -33,7 +33,7 @@ class NewsDetails : AppCompatActivity() {
         } else {
             window.decorView.layoutDirection = View.LAYOUT_DIRECTION_LTR
         }
-        setContentView(R.layout.news_details)
+        setContentView(R.layout.details_news)
 
         val bundle = intent.extras
         bundle?.let {

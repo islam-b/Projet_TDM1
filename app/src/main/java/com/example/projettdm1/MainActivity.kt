@@ -139,18 +139,20 @@ class MainActivity : AppCompatActivity(), NewsListAdapter.OnNewsClickListener,
             }
             R.id.fr_btn -> {
                 LocaleHelper.setLocale(this,"en")
-                restartApp()
+                this.recreate()
 
             }
             R.id.ar_btn -> {
                 LocaleHelper.setLocale(this,"ar")
-                restartApp()
+                this.recreate()
             }
 
                 else -> return false
         }
         return true
     }
+
+
 
     fun restartApp() {
         val i = Intent(this,MainActivity::class.java)
